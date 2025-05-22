@@ -55,6 +55,7 @@
         "hono": "^4.7.10",
       },
       "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
         "wrangler": "^4.4.0",
       },
     },
