@@ -1,0 +1,21 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	"name": "simple-mcp",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-05-22",
+	"compatibility_flags": ["nodejs_compat"],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "BlueskyContextServer",
+				"name": "MCP_OBJECT", // universal for all MCP servers
+			},
+		],
+	},
+	"migrations": [
+		{ "new_sqlite_classes": ["BlueskyContextServer"], "tag": "v1" },
+	],
+	"observability": {
+		"enabled": true,
+	},
+}
