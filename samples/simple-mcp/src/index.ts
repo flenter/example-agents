@@ -2,7 +2,6 @@ import { Hono } from "hono";
 import { McpAgent } from "agents/mcp";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-
 // MCP Server
 
 export class BlueskyContextServer extends McpAgent {
@@ -10,10 +9,9 @@ export class BlueskyContextServer extends McpAgent {
 	async init() {}
 }
 
-
 // entrypoint
 
-const app = new Hono();
+const app = new Hono<{ Bindings: CloudflareBindings }>();
 
 app.get("/", (c) => {
 	return c.text("Hello Hono!");
